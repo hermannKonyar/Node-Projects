@@ -1,10 +1,22 @@
 const express = require('express');
-
 const path = require('path');
+const mysql = require('mysql2');
+
 const app = express();
 
 const userRoutes = require('./routes/user');
 const adminRoutes = require('./routes/admin');
+const config = require('./config');
+
+let db =mysql.createConnection(config.db);
+
+db.connect((err) => {
+  if (err) {
+    console.error('Database connection failed:', err);
+    return;
+  }
+  console.log('Connected to the database');
+});
 
 app.set('view engine', 'ejs');
 
