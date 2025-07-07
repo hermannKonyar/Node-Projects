@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
 </head>
+
 <body>
-    <h1>Blog Listesi</h1>
+    <%- include('../partials/_nav.ejs') %>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <% categories.forEach(element=> { %>
+                            <a href="/blogs" class="list-group-item list-group-item-action ">
+                                <%= element %>
+                            </a>
+                            <% }) %>
+
+
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <div class="card mb-3">
+                        <div class="row">
+                            <div class="col md-3">
+                                <img src="/static/images/1.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="col-md-9">
+
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a href="" class="page-link">Geri</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="" class="page-link active">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="" class="page-link">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="" class="page-link">İleri</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 </body>
+
 </html>
